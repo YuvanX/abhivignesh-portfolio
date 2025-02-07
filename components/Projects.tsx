@@ -10,8 +10,8 @@ type DataType = {
 };
 export default function Projects() {
   return (
-    <div>
-      <h1 className="text-center font-semibold font-custom text-3xl mt-20">
+    <div className="mt-20 mx-5 lg:mx-10">
+      <h1 className="text-center font-semibold font-custom text-3xl">
         Projects
       </h1>
       <div>

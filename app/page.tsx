@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <AppBar />
-      <div className="flex justify-center">
+      <div className="flex justify-center ">
         <Content />
       </div>
     </div>

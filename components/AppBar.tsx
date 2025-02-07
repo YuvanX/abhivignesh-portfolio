@@ -121,7 +121,7 @@ export function AppBar() {
     <TooltipProvider>
       <Dock
         direction="middle"
-        className="fixed left-1/2 transform -translate-x-1/2 z-10 w-full lg:w-[900px] md:w-[700px]  rounded-r-full rounded-l-full" iconSize={iconSize} iconMagnification={iconMagnification}
+        className="fixed left-1/2 transform -translate-x-1/2 z-10 w-full  lg:w-[900px] md:w-[700px]  rounded-r-full rounded-l-full" iconSize={iconSize} iconMagnification={iconMagnification}
       >
         {DATA.navbar.map((item) => (
           <DockIcon key={item.label}>
