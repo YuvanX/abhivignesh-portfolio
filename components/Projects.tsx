@@ -17,6 +17,7 @@ export default function Projects() {
       <div>
         {DATA.map((data: DataType) => (
           <Card
+          key={data.title}
             title={data.title}
             icon={data.icon}
             description={data.description}
