@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <div className="text-center">
       <div>
-        <div className="mx-2 mt-20 mb-10 flex justify-center">
+        <div className="mx-2 mt-44 mb-10 flex justify-center">
             <img className="w-20 h-20 rounded-full" src="/JOIN.png"/>
         </div>
         <h1 className="text-5xl font-bold font-custom">Hi, I'm Abhi Vignesh</h1>

@@ -9,7 +9,7 @@ export function ModeToggle() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <Button className="border-none"
+    <Button className="border-none bg-transparent"
       variant="outline"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

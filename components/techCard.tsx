@@ -1,5 +1,3 @@
 export default function Tech({tech}:{tech: string}) {
-    return <div className="border border-white bg-black hover:text-black cursor-pointer hover:bg-white text-xs px-2 py-1 rounded-r-full rounded-l-full font-extralight">
-        {tech}
-    </div>
+    return <span className="border rounded text-xs px-2 py-2 bg-black text-white hover:bg-white hover:text-black font-custom font-semibold">{tech}</span>
 }

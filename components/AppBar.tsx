@@ -94,9 +94,11 @@ export function AppBar() {
   };
 
   return (
-    
-      <TooltipProvider>
-      <Dock direction="middle">
+    <TooltipProvider>
+      <Dock
+        direction="middle"
+        className="fixed left-1/2 transform -translate-x-1/2 z-10"
+      >
         {DATA.navbar.map((item) => (
           <DockIcon key={item.label}>
             <Tooltip>
@@ -153,6 +155,5 @@ export function AppBar() {
         </DockIcon>
       </Dock>
     </TooltipProvider>
-  
   );
 }
