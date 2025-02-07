@@ -1,4 +1,3 @@
-import Tech from "./techCard"
 
 export default function Skills() {
     const skills = ["JavaScript", "TypeScript", "Java", "React", "Next.js", "Tailwind", "MongoDB", "PostgresSQL", "Prisma", "Docker", "AWS", "Express", "Node.js", "Turborepo", "Git", "GitHub", "Zod"]

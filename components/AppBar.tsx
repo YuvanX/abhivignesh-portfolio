@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import {RiHomeLine, RiPagesLine} from "@remixicon/react"
 import { Dock, DockIcon } from "./dock";
-import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
+import { CalendarIcon, MailIcon } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -19,6 +19,30 @@ import { Separator } from "./ui/separator";
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export function AppBar() {
+  const [iconSize, setIconSize] = useState(90)
+  const [iconMagnification, setIconMagnification] = useState(75)
+
+  const updateIconSize = () => {
+    const width = window.innerWidth;
+
+    if (width < 480) {
+      setIconSize(40);
+      setIconMagnification(60);
+    } else if (width < 768) {
+      setIconSize(60);
+      setIconMagnification(60);
+    } else {
+      setIconSize(90);
+      setIconMagnification(75);
+    }
+  };
+
+  useEffect(() => {
+    updateIconSize(); 
+    window.addEventListener("resize", updateIconSize);
+    return () => window.removeEventListener("resize", updateIconSize);
+  }, []);
+
   const Icons = {
     calendar: (props: IconProps) => <CalendarIcon {...props} />,
     email: (props: IconProps) => <MailIcon {...props} />,
@@ -64,29 +88,29 @@ export function AppBar() {
   };
   const DATA = {
     navbar: [
-      { href: "#", icon: HomeIcon, label: "Home" },
-      { href: "#", icon: PencilIcon, label: "Blog" },
+      { href: "#", icon: RiHomeLine, label: "Home" },
+      { href: "#", icon: RiPagesLine, label: "Resume" },
     ],
     contact: {
       social: {
         GitHub: {
           name: "GitHub",
-          url: "#",
+          url: "https://github.com/YuvanX",
           icon: Icons.github,
         },
         LinkedIn: {
           name: "LinkedIn",
-          url: "#",
+          url: "https://www.linkedin.com/in/abhivignesh/",
           icon: Icons.linkedin,
         },
         X: {
           name: "X",
-          url: "#",
+          url: "https://x.com/AbhiVignesh_",
           icon: Icons.x,
         },
         email: {
           name: "Send Email",
-          url: "#",
+          url: "mailto:abhivigneshofficial@gmail.com",
           icon: Icons.email,
         },
       },
@@ -97,7 +121,7 @@ export function AppBar() {
     <TooltipProvider>
       <Dock
         direction="middle"
-        className="fixed left-1/2 transform -translate-x-1/2 z-10"
+        className="fixed left-1/2 transform -translate-x-1/2 z-10 w-full lg:w-[900px] md:w-[700px]  rounded-r-full rounded-l-full" iconSize={iconSize} iconMagnification={iconMagnification}
       >
         {DATA.navbar.map((item) => (
           <DockIcon key={item.label}>
@@ -111,7 +135,7 @@ export function AppBar() {
                     "size-12 rounded-full"
                   )}
                 >
-                  <item.icon className="size-4" />
+                  <item.icon className="size-4 text-purple-500" />
                 </Link>
               </TooltipTrigger>
               <TooltipContent>

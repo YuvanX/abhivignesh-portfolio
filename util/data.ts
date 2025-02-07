@@ -1,6 +1,6 @@
 export const DATA = [{
     icon: "/JOIN.png",
-    title: "Thoughts - a blogging website",
+    title: "Thoughts | A Modern Blogging Platform",
     description: "Thoughts is a blogging platform where users can read blogs, write their own, and become writers to publish blogs that others can read. It provides a simple, clean interface to express ideas and share thoughts with the world.",
     tech: ["React", "PostgresSQL", "Prisma", "CloudFlare", "Tailwind css", "Hono.js"],
     websiteLink: "https://thoughts-red-omega.vercel.app/home",

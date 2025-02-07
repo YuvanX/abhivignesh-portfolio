@@ -19,12 +19,12 @@ export default function Card({
   sourceLink: string;
 }) {
   return (
-    <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="m-10">
+    <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="m-5 lg:m-10">
       <div className="flex flex-col p-3 cursor-pointer">
         <div className="my-4"><img src={icon} className="w-10 h-10 rounded-full"/></div>
         <div className="font-custom font-semibold text-xl mb-2">{title}</div>
-        <div className="mb-2 text-gray-400">{description}</div>
-        <div className="mt-2 mb-4 flex gap-2">{tech.map(t => <Tech tech={t}/>)}</div>
+        <div className="mb-2 text-gray-400 line-clamp-3">{description}</div>
+        <div className="mt-2 mb-4 flex flex-wrap gap-2">{tech.map(t => <Tech tech={t}/>)}</div>
         <div className="flex gap-2 items-center">
           <div>
             <Link href={websiteLink}>
